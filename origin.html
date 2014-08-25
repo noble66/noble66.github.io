@@ -1,0 +1,78 @@
+<html>
+  
+<head>
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization',
+       'version':'1','packages':['timeline']}]}"></script>
+<script type="text/javascript">
+
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var container = document.getElementById('example3.1');
+  var chart = new google.visualization.Timeline(container);
+
+  var dataTable = new google.visualization.DataTable();
+  dataTable.addColumn({ type: 'string', id: 'Position' });
+  dataTable.addColumn({ type: 'string', id: 'Name' });
+  dataTable.addColumn({ type: 'date', id: 'Start' });
+  dataTable.addColumn({ type: 'date', id: 'End' });
+  dataTable.addRows([
+    [ '2014-08-10',          'St. Louis', 	new Date(2014, 8, 10, 0, 0, 0),   new Date(2014, 8, 10, 3, 30, 21)],
+    [ '2014-08-10',          'Miami',        new Date(2014,8,10,3,30,21),  	new Date(2014, 8, 10, 6, 15, 19)], 
+    [ '2014-08-10',          'Boston',           new Date(2014, 8, 10, 6, 15, 19),  new Date(2014, 8, 10, 10, 55, 22)],
+    [ '2014-08-10',     'New York',        new Date(2014, 8, 10, 10, 55, 22), new Date(2014, 8, 11, 0, 0, 0)],
+    [ '2014-08-11',     'New York',        new Date(2014, 8, 11, 0, 0, 0), new Date(2014, 8, 11, 3, 15, 24)],
+    
+    [ '2014-08-11',     'Washington D.C',  new Date(2014,8,11,3, 15, 24),  new Date(2014,8,11,4, 25, 20)],
+    [ '2014-08-11',     'Atlanta',        new Date(2014,8,11,4, 25, 20),  new Date(2014,8,11,4,35,21)],
+    [ '2014-08-11',     'Memphis',    new Date(2014,8,11,4,35,21),  new Date(2014,8,11,5,0,20)],
+    [ '2014-08-11', 'Chicago',          new Date(2014,8,11,5,0,20), new Date(2014,8,11,5,0,21)],
+    
+    [ '2014-08-11',     'Dallas',  new Date(2014,8,11,5,2,21),  new Date(2014,8,11,5, 10, 22)],
+    [ '2014-08-11',     'New Orleans',        new Date(2014,8,11, 5,10,22),  new Date(2014,8,11,5,40,23)],
+    [ '2014-08-11',     'Philadelphia',    new Date(2014,8,11,5,40,23),  new Date(2014,8,11, 6, 0, 19)],
+    
+    [ '2014-08-11',     'Baton Rouge',    new Date(2014,8,11,6, 0, 19),  new Date(2014,8,11, 6, 3, 29)],
+    [ '2014-08-11',     'Charlotte',    new Date(2014,8,11,6,3,29),  new Date(2014,8,11, 6, 4, 25)],
+    
+    
+     [ '2014-08-11',     'Detroit',          new Date(2014,8,11, 6, 4, 25), new Date(2014,8,11,6,4,55)],
+     
+     [ '2014-08-11',     'Houston',          new Date(2014,8,11, 6, 4, 55), new Date(2014,8,11,6,5,3)],
+     [ '2014-08-11',     'San Antonio',          new Date(2014,8,11, 6, 5, 3), new Date(2014,8,11,6,5,21)],
+    
+     
+     
+      [ '2014-08-11',     'Las Vegas',          new Date(2014,8,11, 6, 5, 21), new Date(2014,8,11,6,15,55)],
+       [ '2014-08-11',     'Los Angeles',          new Date(2014,8,11, 6, 15, 55), new Date(2014,8,11,6,15,58)],
+        [ '2014-08-11',     'San Francisco',          new Date(2014,8,11, 6, 16,0), new Date(2014,8,11,6,55,21)],
+        
+        [ '2014-08-11',     'Raleigh',          new Date(2014,8,11, 6, 55,21), new Date(2014,8,11,7,10,2)],
+        [ '2014-08-11',     'Pheonix',          new Date(2014,8,11, 7,10, 22), new Date(2014,8,11,10,45,22)],
+        [ '2014-08-11',     'Indianapolis',          new Date(2014,8,11, 10, 45,22), new Date(2014,8,11,12,55,22)],
+        [ '2014-08-11',     'Nashville',          new Date(2014,8,11, 12, 55,22), new Date(2014,8,11,13,0,24)],
+        
+        
+       [ '2014-08-11',     'Seattle',          new Date(2014,8,11, 13, 0, 24), new Date(2014,8,11,16,1,25)],
+       [ '2014-08-11',     'Baltimore',          new Date(2014,8,11, 16, 1, 25), new Date(2014,8,11,17,1,10)],
+       ['2014-08-11',    'Denver',       new Date(2014,8,11,17,1,10), new Date(2014,8,11,17,50,10)   ],
+     [ '2014-08-11',     'Portland',          new Date(2014,8,11, 17, 50, 19), new Date(2014,8,11,22,1,25)],
+     ['2014-08-11',    'San Diego',        new Date(2014,8,11,22,1,25), new Date(2014,8,12,3,1,25) ],
+      [ '2014-08-12',     'Austin',          new Date(2014,8,12, 3, 55, 19), new Date(2014,8,12,4,55,25)]
+    
+    
+    ]);
+
+  chart.draw(dataTable);
+}
+</script>
+
+</head>
+<body>
+<h3> Ferguson Trend Contagion </h3>
+<hr>
+<br>
+<div id="example3.1" style="width: 1200px; height: 500px;"></div>
+
+</body>
+</html>

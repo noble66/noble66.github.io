@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+     google.load('visualization', '1', {'packages': ['geochart']});
+     google.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City',   'Volatility'],
+['New York', 2.796717172], ['St. Louis', 0.5681818182], ['Seattle', 0.6281565657], ['Los Angeles', 1.824494949], ['San Francisco', 0.9248737374], ['Boston', 1.256313131], ['Atlanta', 0.9343434343], ['Austin', 0.3851010101], ['Detroit', 0.836489899], ['Chicago', 1.401515152], ['Nashville', 0.3914141414], ['New Orleans', 0.4324494949], ['Phoenix', 0.5303030303], ['Denver', 0.5208333333], ['Raleigh', 0.5713383838], ['San Antonio', 0.4703282828], ['Houston', 0.9690656566], ['Dallas-Ft. Worth', 1.057449495], ['Charlotte', 0.5713383838], ['Baton Rouge', 0.2272727273], ['Memphis', 0.3345959596], ['Portland', 0.4071969697], ['Cleveland', 1.070075758], ['Indianapolis', 0.5082070707], ['Washington DC', 1.325757576], ['Minneapolis', 0.6313131313], ['Miami', 1.246843434], ['Las Vegas', 0.3756313131], ['San Diego', 0.6123737374], ['Salt Lake City', 0.3914141414], ['Philadelphia', 1.594065657], ['Baltimore', 0.6313131313]
+      ]);
+
+      var options = {
+        region: 'US',
+        displayMode: 'markers',
+        colorAxis: {colors: ['green', 'blue']}
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
+    </script>
+  </head>
+  <body>
+    <h3> Volatility of US cities between Aug. 9 - 19 2014 </h3>
+    <hr>
+    <br>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

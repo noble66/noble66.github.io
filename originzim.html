@@ -1,0 +1,41 @@
+<html>
+  
+<head>
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization',
+       'version':'1','packages':['timeline']}]}"></script>
+<script type="text/javascript">
+
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var container = document.getElementById('example3.1');
+  var chart = new google.visualization.Timeline(container);
+
+  var dataTable = new google.visualization.DataTable();
+  dataTable.addColumn({ type: 'string', id: 'Position' });
+  dataTable.addColumn({ type: 'string', id: 'Name' });
+  dataTable.addColumn({ type: 'date', id: 'Start' });
+  dataTable.addColumn({ type: 'date', id: 'End' });
+  dataTable.addRows([
+    [ '2013-07-14',          'San Francisco', 	new Date(2013, 7, 14, 2, 30, 22),   new Date(2013,7,14,2,45,20)],
+    [ '2013-07-14',          'Los Angeles',        new Date(2013,7,14,2,45,20),  	new Date(2013,7,14,6,0,21)  ], 
+    [ '2013-07-14',          'San Antonio',           new Date(2013,7,14,6,0,21)  ,  new Date(2013, 7, 14, 16, 30, 22)],
+    [ '2013-07-14',          'New York',           new Date(2013,7,14,16,30,22)  ,  new Date(2013, 7, 14, 19, 24, 22)]
+    
+    
+    
+    ]);
+
+  chart.draw(dataTable);
+}
+</script>
+
+</head>
+<body>
+<h3> Zimmerman found not guilty (10 PM 2013-07-13) </h3>
+<hr>
+<br>
+<div id="example3.1" style="width: 1200px; height: 500px;"></div>
+
+</body>
+</html>

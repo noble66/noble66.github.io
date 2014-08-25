@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+     google.load('visualization', '1', {'packages': ['geochart']});
+     google.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City',   'Ferguson-related Attention'],
+       ['New York', 4.45], ['St. Louis', 31.8018018], ['Seattle', 3.876123876], ['Los Angeles', 2.797783934], ['San Francisco', 5.862412762], ['Boston', 1.721798134], ['Atlanta', 9.154351396], ['Austin', 4.890795632], ['Detroit', 3.417935702], ['Chicago', 5.465313029], ['Nashville', 4.97700092], ['New Orleans', 2.128440367], ['Phoenix', 4.871287129], ['Denver', 3.983122363], ['Raleigh', 5.356435644], ['San Antonio', 3.633663366], ['Houston', 3.780590717], ['Dallas-Ft. Worth', 4.64978903], ['Charlotte', 4.860759494], ['Baton Rouge', 1.139240506], ['Memphis', 5.018348624], ['Portland', 4.900990099], ['Cleveland', 2.320675105], ['Indianapolis', 6.174311927], ['Washington DC', 6.348195329], ['Minneapolis', 3.229357798], ['Miami', 4.366972477], ['Las Vegas', 8.577981651], ['San Diego', 4.415841584], ['Salt Lake City', 4.97029703], ['Philadelphia', 3.366972477], ['Baltimore', 3.988195616]
+      ]);
+
+      var options = {
+        region: 'US',
+        displayMode: 'markers',
+        colorAxis: {colors: ['orange', 'red']}
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
+    </script>
+  </head>
+  <body>
+    <h3> Ferguson-related Attention Signal Strength of US cities between Aug. 9 - 19 2014 </h3>
+    <hr>
+    <br>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
