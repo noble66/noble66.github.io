@@ -73,7 +73,7 @@
         ]
     },
     "autoload": {
-        "psr-0": { "WTF\\": "src/" }
+        "psr-0": { "Sylius\\": "src/" }
     },
     "config": {
         "bin-dir": "bin"
