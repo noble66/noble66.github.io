@@ -69,6 +69,7 @@ var data = [
 ['naima','xavier',3],
 ['joe','naima',3],
 ['suman','inna',3],
+['suman','X',1],
 ['josh','naima',3],
 ['christen','rob',5],
 ['joey','won',3],
@@ -327,14 +328,14 @@ function sort(a,b){ return d3.ascending(sortOrder.indexOf(a),sortOrder.indexOf(b
 var ch = viz.ch().data(data)
       .padding(.01)
       .sort(sort)
-	  .innerRadius(430)
-	  .outerRadius(450)
-	  .duration(1000)
-	  .chordOpacity(0.3)
+	  .innerRadius(330)
+	  .outerRadius(350)
+	  .duration(800)
+	  .chordOpacity(0.2)
 	  .labelPadding(.03)
       .fill(function(d){ return colors[d];});
 
-var width=1200, height=1100;
+var width=1200, height=1200;
 
 var svg = d3.select("body").append("svg").attr("height",height).attr("width",width);
 
